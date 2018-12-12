@@ -40,6 +40,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gympickup" translatesAutoresizingMaskIntoConstraints="NO" id="Co6-5o-G9V">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2OV-vt-EJh">
                                 <rect key="frame" x="102.5" y="84" width="252.5" height="166.5"/>
                                 <subviews>
@@ -103,13 +106,17 @@
                             <constraint firstItem="M2O-v8-JeH" firstAttribute="leading" secondItem="Iag-AO-COh" secondAttribute="leading" constant="20" id="72b-de-cfS"/>
                             <constraint firstItem="M2O-v8-JeH" firstAttribute="top" secondItem="2OV-vt-EJh" secondAttribute="bottom" constant="20" id="8iR-Wb-VhP"/>
                             <constraint firstItem="R4l-eh-deu" firstAttribute="width" secondItem="kl6-8w-7Mm" secondAttribute="width" multiplier="1:6" id="Dpq-uD-nIX"/>
+                            <constraint firstItem="Co6-5o-G9V" firstAttribute="leading" secondItem="Iag-AO-COh" secondAttribute="leading" id="JQ5-5r-n0X"/>
                             <constraint firstItem="2OV-vt-EJh" firstAttribute="top" secondItem="Iag-AO-COh" secondAttribute="top" constant="20" id="Jgx-A2-cgq"/>
                             <constraint firstItem="Iag-AO-COh" firstAttribute="trailing" secondItem="2OV-vt-EJh" secondAttribute="trailing" constant="20" id="NwO-JP-aBu"/>
+                            <constraint firstItem="Co6-5o-G9V" firstAttribute="top" secondItem="kl6-8w-7Mm" secondAttribute="top" id="VzE-Ta-c6y"/>
                             <constraint firstItem="Iag-AO-COh" firstAttribute="trailing" secondItem="M2O-v8-JeH" secondAttribute="trailing" constant="20" id="Y6p-ld-f0A"/>
                             <constraint firstItem="R4l-eh-deu" firstAttribute="top" secondItem="Iag-AO-COh" secondAttribute="top" constant="20" id="YdE-Ws-fIq"/>
                             <constraint firstItem="2OV-vt-EJh" firstAttribute="height" secondItem="R4l-eh-deu" secondAttribute="height" id="YdI-yf-vam"/>
                             <constraint firstItem="2OV-vt-EJh" firstAttribute="leading" secondItem="R4l-eh-deu" secondAttribute="trailing" constant="20" id="laO-gM-VwB"/>
+                            <constraint firstItem="Iag-AO-COh" firstAttribute="trailing" secondItem="Co6-5o-G9V" secondAttribute="trailing" id="rpi-D0-Kgv"/>
                             <constraint firstItem="R4l-eh-deu" firstAttribute="leading" secondItem="Iag-AO-COh" secondAttribute="leading" constant="20" id="vXs-6g-t6l"/>
+                            <constraint firstItem="Iag-AO-COh" firstAttribute="bottom" secondItem="Co6-5o-G9V" secondAttribute="bottom" id="wnC-vz-8Zh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iag-AO-COh"/>
                     </view>
@@ -156,5 +163,6 @@
     </scenes>
     <resources>
         <image name="camisetas-fondo-blanco-8" width="612" height="792"/>
+        <image name="gympickup" width="571" height="902"/>
     </resources>
 </document>

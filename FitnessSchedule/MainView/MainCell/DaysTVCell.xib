@@ -15,7 +15,7 @@
         <tableViewCell contentMode="scaleToFill" restorationIdentifier="DaysTVC" selectionStyle="default" indentationWidth="10" rowHeight="55" id="KGk-i7-Jjw" customClass="DaysTVCell" customModule="FitnessSchedule" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="395" height="55"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="395" height="54.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -36,6 +36,7 @@
                         </connections>
                     </segmentedControl>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="icM-WN-Xmk" secondAttribute="trailing" id="1sj-hM-2h1"/>
                     <constraint firstItem="icM-WN-Xmk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="SeD-7j-8D7"/>
@@ -43,6 +44,7 @@
                     <constraint firstItem="icM-WN-Xmk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="yNX-I4-TcB"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="daysSegment" destination="icM-WN-Xmk" id="eeI-kz-7Ir"/>

@@ -57,6 +57,12 @@ class MainController: UITableViewController {
         self.activityIndicator.color = UIColor.gray
         self.tableView.addSubview(self.activityIndicator)
         self.activityIndicator.startAnimating()
+        let view = UIView(frame: CGRect(origin: CGPoint.zero, size: self.tableView.frame.size))
+        let imageView = UIImageView(frame: view.frame)
+        imageView.image = UIImage(named: "gympickup")
+        imageView.contentMode = .scaleAspectFill
+        view.addSubview(imageView)
+        tableView.backgroundView = view
     }
     
     private func hide() {
