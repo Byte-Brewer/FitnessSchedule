@@ -8,20 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		783F0B9521BFF4CF00C9C8DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0B9421BFF4CF00C9C8DC /* AppDelegate.swift */; };
-		783F0B9721BFF4CF00C9C8DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0B9621BFF4CF00C9C8DC /* ViewController.swift */; };
+		783F0B9721BFF4CF00C9C8DC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0B9621BFF4CF00C9C8DC /* MainController.swift */; };
 		783F0B9A21BFF4CF00C9C8DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F0B9821BFF4CF00C9C8DC /* Main.storyboard */; };
 		783F0B9C21BFF4D000C9C8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783F0B9B21BFF4D000C9C8DC /* Assets.xcassets */; };
 		783F0B9F21BFF4D000C9C8DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F0B9D21BFF4D000C9C8DC /* LaunchScreen.storyboard */; };
+		783F0BAA21BFF67D00C9C8DC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0BA921BFF67D00C9C8DC /* NetworkManager.swift */; };
+		783F0BAC21BFF99800C9C8DC /* RsponseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0BAB21BFF99800C9C8DC /* RsponseAPI.swift */; };
+		783F0BAE21BFFA2F00C9C8DC /* SchedulerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0BAD21BFFA2F00C9C8DC /* SchedulerElement.swift */; };
+		783F0BB121C002B600C9C8DC /* MainTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0BAF21C002B600C9C8DC /* MainTVCell.swift */; };
+		783F0BB221C002B600C9C8DC /* MainTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783F0BB021C002B600C9C8DC /* MainTVCell.xib */; };
+		783F0BB521C0792200C9C8DC /* Extantions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0BB421C0792200C9C8DC /* Extantions.swift */; };
+		783F0BB821C10B9A00C9C8DC /* DaysTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0BB621C10B9A00C9C8DC /* DaysTVCell.swift */; };
+		783F0BB921C10B9A00C9C8DC /* DaysTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783F0BB721C10B9A00C9C8DC /* DaysTVCell.xib */; };
+		783F0BBB21C12FA000C9C8DC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0BBA21C12FA000C9C8DC /* DetailViewController.swift */; };
+		9E7722B41D51AA8CC89838AA /* Pods_FitnessSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6169C29F812C242D70C16F6 /* Pods_FitnessSchedule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		783F0B9121BFF4CF00C9C8DC /* FitnessSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783F0B9421BFF4CF00C9C8DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		783F0B9621BFF4CF00C9C8DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		783F0B9621BFF4CF00C9C8DC /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		783F0B9921BFF4CF00C9C8DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		783F0B9B21BFF4D000C9C8DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		783F0B9E21BFF4D000C9C8DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		783F0BA021BFF4D000C9C8DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		783F0BA921BFF67D00C9C8DC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		783F0BAB21BFF99800C9C8DC /* RsponseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsponseAPI.swift; sourceTree = "<group>"; };
+		783F0BAD21BFFA2F00C9C8DC /* SchedulerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerElement.swift; sourceTree = "<group>"; };
+		783F0BAF21C002B600C9C8DC /* MainTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVCell.swift; sourceTree = "<group>"; };
+		783F0BB021C002B600C9C8DC /* MainTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTVCell.xib; sourceTree = "<group>"; };
+		783F0BB421C0792200C9C8DC /* Extantions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extantions.swift; sourceTree = "<group>"; };
+		783F0BB621C10B9A00C9C8DC /* DaysTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysTVCell.swift; sourceTree = "<group>"; };
+		783F0BB721C10B9A00C9C8DC /* DaysTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaysTVCell.xib; sourceTree = "<group>"; };
+		783F0BBA21C12FA000C9C8DC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B6169C29F812C242D70C16F6 /* Pods_FitnessSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD66068503BF23CA760ABE43 /* Pods-FitnessSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessSchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitnessSchedule/Pods-FitnessSchedule.debug.xcconfig"; sourceTree = "<group>"; };
+		EA4188C2C593F04207DACE57 /* Pods-FitnessSchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessSchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitnessSchedule/Pods-FitnessSchedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E7722B41D51AA8CC89838AA /* Pods_FitnessSchedule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +63,8 @@
 			children = (
 				783F0B9321BFF4CF00C9C8DC /* FitnessSchedule */,
 				783F0B9221BFF4CF00C9C8DC /* Products */,
+				8F34CD406623D1201FF55F63 /* Pods */,
+				AB2D64FD11FE96D3D728E7B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +79,72 @@
 		783F0B9321BFF4CF00C9C8DC /* FitnessSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				783F0BA721BFF61100C9C8DC /* Network */,
+				783F0BA821BFF62500C9C8DC /* MainView */,
+				783F0BA621BFF5F200C9C8DC /* SupportingFiles */,
+			);
+			path = FitnessSchedule;
+			sourceTree = "<group>";
+		};
+		783F0BA621BFF5F200C9C8DC /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				783F0B9421BFF4CF00C9C8DC /* AppDelegate.swift */,
-				783F0B9621BFF4CF00C9C8DC /* ViewController.swift */,
-				783F0B9821BFF4CF00C9C8DC /* Main.storyboard */,
+				783F0BB421C0792200C9C8DC /* Extantions.swift */,
 				783F0B9B21BFF4D000C9C8DC /* Assets.xcassets */,
 				783F0B9D21BFF4D000C9C8DC /* LaunchScreen.storyboard */,
 				783F0BA021BFF4D000C9C8DC /* Info.plist */,
 			);
-			path = FitnessSchedule;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		783F0BA721BFF61100C9C8DC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				783F0BA921BFF67D00C9C8DC /* NetworkManager.swift */,
+				783F0BAB21BFF99800C9C8DC /* RsponseAPI.swift */,
+				783F0BAD21BFFA2F00C9C8DC /* SchedulerElement.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		783F0BA821BFF62500C9C8DC /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				783F0BB321C002BE00C9C8DC /* MainCell */,
+				783F0B9621BFF4CF00C9C8DC /* MainController.swift */,
+				783F0BBA21C12FA000C9C8DC /* DetailViewController.swift */,
+				783F0B9821BFF4CF00C9C8DC /* Main.storyboard */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		783F0BB321C002BE00C9C8DC /* MainCell */ = {
+			isa = PBXGroup;
+			children = (
+				783F0BAF21C002B600C9C8DC /* MainTVCell.swift */,
+				783F0BB021C002B600C9C8DC /* MainTVCell.xib */,
+				783F0BB621C10B9A00C9C8DC /* DaysTVCell.swift */,
+				783F0BB721C10B9A00C9C8DC /* DaysTVCell.xib */,
+			);
+			path = MainCell;
+			sourceTree = "<group>";
+		};
+		8F34CD406623D1201FF55F63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD66068503BF23CA760ABE43 /* Pods-FitnessSchedule.debug.xcconfig */,
+				EA4188C2C593F04207DACE57 /* Pods-FitnessSchedule.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AB2D64FD11FE96D3D728E7B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6169C29F812C242D70C16F6 /* Pods_FitnessSchedule.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 783F0BA321BFF4D000C9C8DC /* Build configuration list for PBXNativeTarget "FitnessSchedule" */;
 			buildPhases = (
+				9C45241190B532010B00FE5B /* [CP] Check Pods Manifest.lock */,
 				783F0B8D21BFF4CF00C9C8DC /* Sources */,
 				783F0B8E21BFF4CF00C9C8DC /* Frameworks */,
 				783F0B8F21BFF4CF00C9C8DC /* Resources */,
+				9049EA4ADECB31532158C5CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,21 +207,79 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783F0BB921C10B9A00C9C8DC /* DaysTVCell.xib in Resources */,
 				783F0B9F21BFF4D000C9C8DC /* LaunchScreen.storyboard in Resources */,
 				783F0B9C21BFF4D000C9C8DC /* Assets.xcassets in Resources */,
+				783F0BB221C002B600C9C8DC /* MainTVCell.xib in Resources */,
 				783F0B9A21BFF4CF00C9C8DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9049EA4ADECB31532158C5CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FitnessSchedule/Pods-FitnessSchedule-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitnessSchedule/Pods-FitnessSchedule-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C45241190B532010B00FE5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitnessSchedule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		783F0B8D21BFF4CF00C9C8DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783F0B9721BFF4CF00C9C8DC /* ViewController.swift in Sources */,
+				783F0BBB21C12FA000C9C8DC /* DetailViewController.swift in Sources */,
+				783F0BAE21BFFA2F00C9C8DC /* SchedulerElement.swift in Sources */,
+				783F0BAA21BFF67D00C9C8DC /* NetworkManager.swift in Sources */,
+				783F0B9721BFF4CF00C9C8DC /* MainController.swift in Sources */,
 				783F0B9521BFF4CF00C9C8DC /* AppDelegate.swift in Sources */,
+				783F0BB521C0792200C9C8DC /* Extantions.swift in Sources */,
+				783F0BB121C002B600C9C8DC /* MainTVCell.swift in Sources */,
+				783F0BB821C10B9A00C9C8DC /* DaysTVCell.swift in Sources */,
+				783F0BAC21BFF99800C9C8DC /* RsponseAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +423,12 @@
 		};
 		783F0BA421BFF4D000C9C8DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD66068503BF23CA760ABE43 /* Pods-FitnessSchedule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CSCETSS9EC;
-				INFOPLIST_FILE = FitnessSchedule/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FitnessSchedule/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,11 +442,12 @@
 		};
 		783F0BA521BFF4D000C9C8DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA4188C2C593F04207DACE57 /* Pods-FitnessSchedule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CSCETSS9EC;
-				INFOPLIST_FILE = FitnessSchedule/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FitnessSchedule/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
