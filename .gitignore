@@ -188,3 +188,19 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+.idea/FitnessSchedule.iml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/xcode.xml
+FitnessSchedule.xcworkspace/contents.xcworkspacedata
+FitnessSchedule.xcworkspace/xcshareddata/
+#Podfile
+Podfile.lock
+Pods/Alamofire/
+Pods/Headers/
+Pods/Local Podspecs/
+Pods/Manifest.lock
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/SwiftyJSON/
+Pods/Target Support Files/

@@ -22,7 +22,7 @@ class MainController: UITableViewController {
     
     var filter: Int? {
         didSet{
-            if filter == 7 {
+            if filter == 0 {
                 arrayOfSchedule = tempArray
             } else {
                 arrayOfSchedule = tempArray.filter{
@@ -43,8 +43,16 @@ class MainController: UITableViewController {
         tableView.register(UINib(nibName: "MainTVCell", bundle: nil), forCellReuseIdentifier: "MainTVC")
         tableView.register(UINib(nibName: "DaysTVCell", bundle: nil), forCellReuseIdentifier: "DaysTVC")
         tableView.tableFooterView = UIView()
+        
         self.navigationController?.navigationBar.barTintColor = .black
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        let view = UIView(frame: CGRect(origin: CGPoint.zero, size: self.tableView.frame.size))
+        let imageView = UIImageView(frame: view.frame)
+        imageView.image = UIImage(named: "gympickup")
+        imageView.contentMode = .scaleAspectFill
+        view.addSubview(imageView)
+        tableView.backgroundView = view
     }
     
     // set activityIndicator
@@ -57,12 +65,6 @@ class MainController: UITableViewController {
         self.activityIndicator.color = UIColor.gray
         self.tableView.addSubview(self.activityIndicator)
         self.activityIndicator.startAnimating()
-        let view = UIView(frame: CGRect(origin: CGPoint.zero, size: self.tableView.frame.size))
-        let imageView = UIImageView(frame: view.frame)
-        imageView.image = UIImage(named: "gympickup")
-        imageView.contentMode = .scaleAspectFill
-        view.addSubview(imageView)
-        tableView.backgroundView = view
     }
     
     private func hide() {
@@ -70,8 +72,8 @@ class MainController: UITableViewController {
         self.activityIndicator.stopAnimating()
     }
     
-    // MARK: tableViewDelegate, tableViewDataSource
     
+    // MARK: tableViewDelegate, tableViewDataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayOfSchedule.count + 1
     }
@@ -79,10 +81,11 @@ class MainController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DaysTVC", for: indexPath) as! DaysTVCell
-            cell.daysSegment.selectedSegmentIndex = filter ?? 7
+            cell.daysArray.filter{$0.tag == self.filter ?? 0}.first?.backgroundColor = UIColor.marigold
             cell.callback = { dayIndex in
                 self.filter = dayIndex
             }
+            cell.selectionStyle = .none
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MainTVC", for: indexPath) as! MainTVCell

@@ -56,7 +56,7 @@ enum Position: String, Codable {
 }
 
 enum WeekDays: Int, Codable {
-    case Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+    case Monday = 1, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
     func introduce() -> String {
         switch self {
         case .Monday: return "Понедельник"

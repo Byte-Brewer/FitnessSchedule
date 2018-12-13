@@ -9,25 +9,28 @@
 import UIKit
 
 class DaysTVCell: UITableViewCell {
-
-    @IBOutlet weak var daysSegment: UISegmentedControl!
+    
+    @IBOutlet var daysArray: [UIButton]!
     
     var callback: ((_ selectedDay:Int)->())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        daysSegment.tintColor = .black
-        daysSegment.layer.cornerRadius = 3.0
-        daysSegment.clipsToBounds = true
+        daysArray.forEach{$0.backgroundColor = UIColor.clear}
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    
-    @IBAction func segmentedAction(_ sender: UISegmentedControl) {
-        let selectedDayIndex = sender.selectedSegmentIndex
-        self.callback!(selectedDayIndex)
+    @IBAction func selectDayAction(_ sender: UIButton) {
+        daysArray.forEach{$0.backgroundColor = UIColor.clear}
+        let selectedDayIndex = sender.tag
+        for day in daysArray {
+            if day.tag == sender.tag {
+                day.backgroundColor = UIColor.marigold
+                self.callback!(selectedDayIndex)
+            } 
+        }
     }
 }
