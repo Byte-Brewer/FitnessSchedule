@@ -32,7 +32,7 @@ class NetworkManager {
                     completionHandler(responseAPI)
                 case .failure(let error):
                     let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-                    print("\nTime for main) : \(String(format: "%.3f", timeElapsed)) second.")
+                    print("\nTime for main with error : \(String(format: "%.3f", timeElapsed)) second.")
                     let responseAPI = ResponseAPI(withError: error)
                     completionHandler(responseAPI)
                 }

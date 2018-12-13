@@ -20,7 +20,7 @@ struct SchedulerElement: Codable {
     let endTime: String
     let teacherV2: TeacherV2
     let teacher, appointmentID, startTime, name: String
-    let place: Place
+    let place: String
     
     enum CodingKeys: String, CodingKey {
         case description, weekDay, appointment
@@ -31,10 +31,6 @@ struct SchedulerElement: Codable {
         case appointmentID = "appointment_id"
         case startTime, name, place
     }
-}
-
-enum Place: String, Codable {
-    case залГрупповыхПрограмм = "Зал групповых программ"
 }
 
 struct TeacherV2: Codable {
@@ -51,8 +47,8 @@ struct TeacherV2: Codable {
 }
 
 enum Position: String, Codable {
-    case инструкторГрупповыхПрограмм = "Инструктор групповых программ"
-    case персональныйТренер = "Персональный тренер"
+    case groupLessonInstructor = "Инструктор групповых программ"
+    case personalTrainer = "Персональный тренер"
 }
 
 enum WeekDays: Int, Codable {

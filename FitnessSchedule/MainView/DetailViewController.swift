@@ -33,7 +33,7 @@ class DetailViewController: UIViewController {
         self.time.text = "\(schedule.startTime) - \(schedule.endTime)"
         self.trainerName.text = schedule.teacher
         self.name.text = schedule.name
-        self.group.text = schedule.place.rawValue
+        self.group.text = schedule.place
         self.describe.text = schedule.description
         self.position.text = schedule.teacherV2.position.rawValue
         NetworkManager.shared.getImage(imageID: schedule.teacherV2.imageURL) { (image) in

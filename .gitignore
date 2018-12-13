@@ -204,3 +204,4 @@ Pods/Manifest.lock
 Pods/Pods.xcodeproj/project.pbxproj
 Pods/SwiftyJSON/
 Pods/Target Support Files/
+.idea/vcs.xml

@@ -29,7 +29,7 @@ class MainTVCell: UITableViewCell {
     
     func setup(schedule:SchedulerElement) {
         self.name.text = schedule.name
-        self.place.text = schedule.place.rawValue
+        self.place.text = schedule.place
         self.time.text = schedule.startTime 
         self.teacher.text = schedule.teacher
         self.colorBorder.backgroundColor = UIColor(hexString: schedule.color)

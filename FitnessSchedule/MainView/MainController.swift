@@ -39,37 +39,16 @@ class MainController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getSchedule()
+        addBackgroundView()
+        
         tableView.register(UINib(nibName: "MainTVCell", bundle: nil), forCellReuseIdentifier: "MainTVC")
         tableView.register(UINib(nibName: "DaysTVCell", bundle: nil), forCellReuseIdentifier: "DaysTVC")
         tableView.tableFooterView = UIView()
         
         self.navigationController?.navigationBar.barTintColor = .black
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        
-        let view = UIView(frame: CGRect(origin: CGPoint.zero, size: self.tableView.frame.size))
-        let imageView = UIImageView(frame: view.frame)
-        imageView.image = UIImage(named: "gympickup")
-        imageView.contentMode = .scaleAspectFill
-        view.addSubview(imageView)
-        tableView.backgroundView = view
-    }
-    
-    // set activityIndicator
-    private func show() {
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        self.activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        self.activityIndicator.center = self.view.center
-        self.activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
-        self.activityIndicator.color = UIColor.gray
-        self.tableView.addSubview(self.activityIndicator)
-        self.activityIndicator.startAnimating()
-    }
-    
-    private func hide() {
-        UIApplication.shared.endIgnoringInteractionEvents()
-        self.activityIndicator.stopAnimating()
     }
     
     
@@ -115,6 +94,33 @@ class MainController: UITableViewController {
         }
     }
     
+    
+    // set activityIndicator
+    private func showActivityIndicator() {
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        self.activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        self.activityIndicator.center = self.view.center
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
+        self.activityIndicator.color = UIColor.gray
+        self.tableView.addSubview(self.activityIndicator)
+        self.activityIndicator.startAnimating()
+    }
+    
+    private func hideActivityIndicator() {
+        UIApplication.shared.endIgnoringInteractionEvents()
+        self.activityIndicator.stopAnimating()
+    }
+    
+    fileprivate func addBackgroundView() {
+        let view = UIView(frame: CGRect(origin: CGPoint.zero, size: self.tableView.frame.size))
+        let imageView = UIImageView(frame: view.frame)
+        imageView.image = UIImage(named: "gympickup")
+        imageView.contentMode = .scaleAspectFill
+        view.addSubview(imageView)
+        tableView.backgroundView = view
+    }
+    
     private func alert(title: String, message: String) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -125,10 +131,12 @@ class MainController: UITableViewController {
     }
     
     private func getSchedule() {
-        self.show()
+        self.showActivityIndicator()
         NetworkManager.shared.mainRequest { (responseAPI) in
-            defer { self.hide() }
-            guard responseAPI.status == "OK" else { return }
+            defer { self.hideActivityIndicator() }
+            guard responseAPI.status == "OK" else {
+                self.alert(title: "Error", message: responseAPI.status)
+                return }
             do {
                 //here dataResponse received from a network request
                 let decoder = JSONDecoder()
