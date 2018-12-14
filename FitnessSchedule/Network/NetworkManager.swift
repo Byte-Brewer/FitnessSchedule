@@ -13,13 +13,13 @@ import SwiftyJSON
 class NetworkManager {
     static var shared = NetworkManager()
     private init () {}
-    let urlString = "https://sample.fitnesskit-admin.ru/schedule/get_group_lessons_v2/4/"
+    let urlString = "https://sample.fitnesskit-admin.ru/schedule/get_group_lessons_v2/"
     
-    func mainRequest(withComplition completionHandler: @escaping (ResponseAPI) -> ()) {
+    func mainRequest(hall: Int, withComplition completionHandler: @escaping (ResponseAPI) -> ()) {
         // create get request
         let startTime = CFAbsoluteTimeGetCurrent()
-        
-        Alamofire.request(urlString)
+        let url = urlString + "\(hall)/"
+        Alamofire.request(url)
             .debugLog()
             .responseJSON { response in
                 

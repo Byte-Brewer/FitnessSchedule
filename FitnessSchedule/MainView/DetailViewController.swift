@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        self.teacherImage.layer.cornerRadius = 10.0
+        self.teacherImage.layer.cornerRadius = self.teacherImage.frame.width/2
         self.teacherImage.clipsToBounds = true
     }
     
@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
         self.name.text = schedule.name
         self.group.text = schedule.place
         self.describe.text = schedule.description
-        self.position.text = schedule.teacherV2.position.rawValue
+        self.position.text = schedule.teacherV2.position
         NetworkManager.shared.getImage(imageID: schedule.teacherV2.imageURL) { (image) in
             DispatchQueue.main.async {
                 self.teacherImage.image = image

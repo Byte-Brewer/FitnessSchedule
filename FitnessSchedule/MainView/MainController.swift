@@ -40,18 +40,18 @@ class MainController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getSchedule()
+        getSchedule(hall: 1)
         addBackgroundView()
         
         tableView.register(UINib(nibName: "MainTVCell", bundle: nil), forCellReuseIdentifier: "MainTVC")
         tableView.register(UINib(nibName: "DaysTVCell", bundle: nil), forCellReuseIdentifier: "DaysTVC")
         tableView.tableFooterView = UIView()
         
-        self.navigationController?.navigationBar.barTintColor = .black
+        self.navigationController?.navigationBar.barTintColor = .mainBarColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
-    
+     
     // MARK: tableViewDelegate, tableViewDataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayOfSchedule.count + 1
@@ -98,17 +98,19 @@ class MainController: UITableViewController {
     // set activityIndicator
     private func showActivityIndicator() {
         UIApplication.shared.beginIgnoringInteractionEvents()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         self.activityIndicator.center = self.view.center
         self.activityIndicator.hidesWhenStopped = true
         self.activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
-        self.activityIndicator.color = UIColor.gray
+        self.activityIndicator.color = UIColor.marigold
         self.tableView.addSubview(self.activityIndicator)
         self.activityIndicator.startAnimating()
     }
     
     private func hideActivityIndicator() {
         UIApplication.shared.endIgnoringInteractionEvents()
+         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         self.activityIndicator.stopAnimating()
     }
     
@@ -130,9 +132,9 @@ class MainController: UITableViewController {
         }
     }
     
-    private func getSchedule() {
+    private func getSchedule(hall: Int) {
         self.showActivityIndicator()
-        NetworkManager.shared.mainRequest { (responseAPI) in
+        NetworkManager.shared.mainRequest(hall: hall) { (responseAPI) in
             defer { self.hideActivityIndicator() }
             guard responseAPI.status == "OK" else {
                 self.alert(title: "Error", message: responseAPI.status)

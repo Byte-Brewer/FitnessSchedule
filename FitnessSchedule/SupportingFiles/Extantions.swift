@@ -16,7 +16,7 @@ extension UIColor {
         
         if hexString.hasPrefix("#") {
             let start = hexString.index(hexString.startIndex, offsetBy: 1)
-            let hexColor = hexString.substring(from: start)
+            let hexColor = String(hexString[start...])
             
             if hexColor.count == 6 {
                 let scanner = Scanner(string: hexColor)
@@ -37,15 +37,21 @@ extension UIColor {
         return nil
     }
     
-    open class var silver: UIColor { // rgb 237 238 238
+    open class var silver: UIColor {
         get {
             return UIColor(red: 237.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1.0)
         }
     }
 
-    open class var marigold: UIColor { // rgb 253 192 0
+    open class var marigold: UIColor {
         get {
             return UIColor(hexString: "#FDC000")!
+        }
+    }
+    
+    open class var mainBarColor: UIColor {
+        get {
+            return UIColor(hexString: "#D1722E")!
         }
     }
 }

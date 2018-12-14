@@ -37,7 +37,7 @@ struct TeacherV2: Codable {
     let shortName: String
     let imageURL: String
     let name: String
-    let position: Position
+    let position: String
     
     enum CodingKeys: String, CodingKey {
         case shortName = "short_name"
@@ -49,6 +49,7 @@ struct TeacherV2: Codable {
 enum Position: String, Codable {
     case groupLessonInstructor = "Инструктор групповых программ"
     case personalTrainer = "Персональный тренер"
+    case eliteTrainerOfGroupProgram = "Элит-тренер групповых программ"
 }
 
 enum WeekDays: Int, Codable {
