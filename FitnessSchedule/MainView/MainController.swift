@@ -110,7 +110,7 @@ class MainController: UITableViewController {
     
     private func hideActivityIndicator() {
         UIApplication.shared.endIgnoringInteractionEvents()
-         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         self.activityIndicator.stopAnimating()
     }
     
@@ -136,20 +136,27 @@ class MainController: UITableViewController {
         self.showActivityIndicator()
         NetworkManager.shared.mainRequest(hall: hall) { (responseAPI) in
             defer { self.hideActivityIndicator() }
+            let schedule = responseAPI.parseJson(type: Scheduler.self)
             guard responseAPI.status == "OK" else {
                 self.alert(title: "Error", message: responseAPI.status)
-                return }
-            do {
-                //here dataResponse received from a network request
-                let decoder = JSONDecoder()
-                let model = try decoder.decode(Scheduler.self, from: responseAPI.jsonResponse.rawData()) //Decode JSON Response Data
-                if model.count > 0 {
-                    self.arrayOfSchedule = model
-                    self.tempArray = model
-                }
-            } catch let parsingError {
-                self.alert(title: "Error", message: String(parsingError.localizedDescription))
+                return
             }
+            if (schedule?.count)! > 0 {
+                self.arrayOfSchedule = schedule!
+                self.tempArray = schedule!
+            }
+           
+//            do {
+//                //here dataResponse received from a network request
+//                let decoder = JSONDecoder()
+//                let model = try decoder.decode(Scheduler.self, from: responseAPI.jsonResponse.rawData()) //Decode JSON Response Data
+//                if model.count > 0 {
+//                    self.arrayOfSchedule = model
+//                    self.tempArray = model
+//                }
+//            } catch let parsingError {
+//                self.alert(title: "Error", message: String(parsingError.localizedDescription))
+//            }
         }
     }
 }

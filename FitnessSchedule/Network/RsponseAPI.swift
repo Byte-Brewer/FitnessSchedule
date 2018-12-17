@@ -27,4 +27,18 @@ class ResponseAPI {
         self.status = "OK"
         self.jsonResponse = json
     }
+    
+    func parseJson<T: Decodable>(type: T.Type) -> T? {
+        guard self.status == "OK" else {
+            return nil
+        }
+        do {
+            let myStruct = try JSONDecoder().decode(T.self, from: self.jsonResponse.rawData())
+            return myStruct
+        } catch let error {
+            print("ERROR IN \(T.self)  \n\n \(error)")
+            self.status = error.localizedDescription
+            return nil
+        }
+    }
 }
