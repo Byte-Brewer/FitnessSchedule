@@ -10,30 +10,7 @@ import UIKit
 
 class MainController: UITableViewController {
     
-    var arrayOfSchedule: [SchedulerElement] = []{
-        didSet{
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    var tempArray: Scheduler = []
-    
-    var filter: Int? {
-        didSet{
-            if filter == 0 {
-                arrayOfSchedule = tempArray
-            } else {
-                arrayOfSchedule = tempArray.filter{
-                    $0.weekDay.rawValue == filter
-                }
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+    @IBOutlet var dataProvider: DataProvider!
     
     var activityIndicator = UIActivityIndicatorView()
     
@@ -49,51 +26,11 @@ class MainController: UITableViewController {
         
         self.navigationController?.navigationBar.barTintColor = .mainBarColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-    }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("UpdateTableView"), object: nil, queue: nil, using: updateTableView)
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("GoToDetailVC"), object: nil, queue: nil, using: goToDetailVC)
     
-     
-    // MARK: tableViewDelegate, tableViewDataSource
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfSchedule.count + 1
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DaysTVC", for: indexPath) as! DaysTVCell
-            cell.daysArray.filter{$0.tag == self.filter ?? 0}.first?.backgroundColor = UIColor.marigold
-            cell.callback = { dayIndex in
-                self.filter = dayIndex
-            }
-            cell.selectionStyle = .none
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MainTVC", for: indexPath) as! MainTVCell
-            let schedule = arrayOfSchedule[indexPath.row - 1]
-            cell.setup(schedule: schedule)
-            let backgroundView = UIView()
-            backgroundView.backgroundColor = UIColor.marigold
-            cell.selectedBackgroundView = backgroundView
-            return cell
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 50
-        } else {
-            return 190.0
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row != 0 {
-            let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailViewController
-            detailVC.scheduleElement = arrayOfSchedule[indexPath.row - 1]
-            self.navigationController?.pushViewController(detailVC, animated: true)
-        }
-    }
-    
     
     // set activityIndicator
     private func showActivityIndicator() {
@@ -132,6 +69,20 @@ class MainController: UITableViewController {
         }
     }
     
+    private func updateTableView(notification: Notification) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func goToDetailVC(notification: Notification) {
+        if let itemIndex = notification.userInfo!["itemIndex"] as? Int {
+            let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailViewController
+            detailVC.scheduleElement = self.dataProvider.dataManager.arrayOfSchedule[itemIndex - 1]
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
+    
     private func getSchedule(hall: Int) {
         self.showActivityIndicator()
         NetworkManager.shared.mainRequest(hall: hall) { (responseAPI) in
@@ -142,21 +93,9 @@ class MainController: UITableViewController {
                 return
             }
             if (schedule?.count)! > 0 {
-                self.arrayOfSchedule = schedule!
-                self.tempArray = schedule!
+                self.dataProvider.dataManager.arrayOfSchedule = schedule!
+                self.dataProvider.dataManager.tempArray = schedule!
             }
-           
-//            do {
-//                //here dataResponse received from a network request
-//                let decoder = JSONDecoder()
-//                let model = try decoder.decode(Scheduler.self, from: responseAPI.jsonResponse.rawData()) //Decode JSON Response Data
-//                if model.count > 0 {
-//                    self.arrayOfSchedule = model
-//                    self.tempArray = model
-//                }
-//            } catch let parsingError {
-//                self.alert(title: "Error", message: String(parsingError.localizedDescription))
-//            }
         }
     }
 }

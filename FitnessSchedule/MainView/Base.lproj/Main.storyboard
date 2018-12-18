@@ -19,16 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
-                            <outlet property="dataSource" destination="2rw-4v-6VX" id="2ab-Lz-6qT"/>
-                            <outlet property="delegate" destination="2rw-4v-6VX" id="1n1-de-lda"/>
+                            <outlet property="dataSource" destination="H55-Wq-Azo" id="EEQ-XM-QhM"/>
+                            <outlet property="delegate" destination="H55-Wq-Azo" id="XOl-L7-wgJ"/>
+                            <outlet property="prefetchDataSource" destination="H55-Wq-Azo" id="whM-l9-igz"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Расписание" id="1a8-6X-YlV"/>
                     <connections>
+                        <outlet property="dataProvider" destination="H55-Wq-Azo" id="lhr-iK-Vxl"/>
                         <segue destination="0Jh-7h-9Xt" kind="show" identifier="noNeed" id="vcT-my-KBl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQt-Od-6cN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="H55-Wq-Azo" customClass="DataProvider" customModule="FitnessSchedule" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1156" y="-231.63418290854574"/>
         </scene>

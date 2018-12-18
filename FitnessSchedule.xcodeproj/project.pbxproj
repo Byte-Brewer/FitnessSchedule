@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78397DD221C8EF570027CCAE /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78397DD121C8EF570027CCAE /* DataProvider.swift */; };
+		78397DD421C8F3360027CCAE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78397DD321C8F3360027CCAE /* DataManager.swift */; };
 		783F0B9521BFF4CF00C9C8DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0B9421BFF4CF00C9C8DC /* AppDelegate.swift */; };
 		783F0B9721BFF4CF00C9C8DC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F0B9621BFF4CF00C9C8DC /* MainController.swift */; };
 		783F0B9A21BFF4CF00C9C8DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F0B9821BFF4CF00C9C8DC /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78397DD121C8EF570027CCAE /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		78397DD321C8F3360027CCAE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		783F0B9121BFF4CF00C9C8DC /* FitnessSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783F0B9421BFF4CF00C9C8DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		783F0B9621BFF4CF00C9C8DC /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				783F0B9621BFF4CF00C9C8DC /* MainController.swift */,
 				783F0BBA21C12FA000C9C8DC /* DetailViewController.swift */,
 				783F0B9821BFF4CF00C9C8DC /* Main.storyboard */,
+				78397DD121C8EF570027CCAE /* DataProvider.swift */,
+				78397DD321C8F3360027CCAE /* DataManager.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -273,11 +279,13 @@
 			files = (
 				783F0BBB21C12FA000C9C8DC /* DetailViewController.swift in Sources */,
 				783F0BAE21BFFA2F00C9C8DC /* SchedulerElement.swift in Sources */,
+				78397DD221C8EF570027CCAE /* DataProvider.swift in Sources */,
 				783F0BAA21BFF67D00C9C8DC /* NetworkManager.swift in Sources */,
 				783F0B9721BFF4CF00C9C8DC /* MainController.swift in Sources */,
 				783F0B9521BFF4CF00C9C8DC /* AppDelegate.swift in Sources */,
 				783F0BB521C0792200C9C8DC /* Extantions.swift in Sources */,
 				783F0BB121C002B600C9C8DC /* MainTVCell.swift in Sources */,
+				78397DD421C8F3360027CCAE /* DataManager.swift in Sources */,
 				783F0BB821C10B9A00C9C8DC /* DaysTVCell.swift in Sources */,
 				783F0BAC21BFF99800C9C8DC /* RsponseAPI.swift in Sources */,
 			);
